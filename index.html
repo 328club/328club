@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     <title>328club</title>
+    <meta charset="UTF-8">
+    <title>风暴英雄黄金联赛厦门站</title>
+    <style>
+        body {
+            width: 100%;
+            background: linear-gradient(90deg, deepskyblue, forestgreen);
+        }
+
+        .title {
+            font-size: 128px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 20px;
+            width: 800px;
+            height: 130px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, orange, purple);
+            text-shadow: whitesmoke;
+        }
+
+        .footer {
+            color: white;
+            width: 100%;
+            position: fixed;
+            bottom: 5px;
+            text-align: center;
+        }
+
+        .qrcode {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            text-align: center;
+        }
+
+        .qrcode .tips {
+            color: whitesmoke;
+            font-size: 18px;
+            line-height: 20px;
+        }
+
+        .qrcode .image {
+            width: 112px;
+            height: 153px;
+        }
+    </style>
 </head>
 <body>
-	Hello Xiamen!
-捐助本站
-<div>
-	  <img src=./wechat.png>
+<div class="title">你好，厦门</div>
+<div class="footer">本活动由328会所全体成员赞助</div>
+<div class="qrcode">
+    <div class="tips">捐助本站</div>
+    <img class="image" src=./wechat.png>
 </div>
 </body>
 </html>

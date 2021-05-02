@@ -35,8 +35,9 @@ def create_lucky(seed):
 		blueball_left=blueball_left-1
 	redball_pool.sort()	
 	blueball_pool.sort()
-	lottery=str(redball_pool+blueball_pool).replace('[','').replace(']','\n')
-	return lottery
+	# lottery=str(redball_pool+blueball_pool).replace('[','').replace(']','\n')
+	redball_pool.extend(blueball_pool)
+	return redball_pool
 
 def create_dantuo(seed):
 	LUCKY_SEED=int(seed)
@@ -106,4 +107,4 @@ def single(name=None):
 @app.route('/8848/')
 @app.route('/8848/<name>')
 def dantuo(name=None):
-    return render_template('hello.html', name=create_dantuo(name))
+    return render_template('more.html', name=create_dantuo(name))

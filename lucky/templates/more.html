@@ -1,0 +1,46 @@
+<!doctype html>
+<title>感受宁静</title>
+<script>
+  
+</script>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    background-image: url('/static/more.jpeg');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-color: #F3D8A0;;
+    background-position: 50% 50%;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  .content {
+    width: 50%;
+    height: 60px;
+    background-color: #F3D8A0;
+    color: #fff;
+    border-radius: 28px;
+    font-size: 22px;
+    line-height: 60px;
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 25%;
+  }
+
+</style>
+<body>
+  {% if name %}
+  <div class="content">感受宁静 {{name}} !</div>
+
+  <!-- <img src='/static/gansouningjing.jpeg'/> -->
+  {% else %}
+  <h1>平常心!</h1>
+  {% endif %}
+</body>

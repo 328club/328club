@@ -1,8 +1,64 @@
 <!doctype html>
 <title>感受宁静</title>
-{% if name %}
-  <h1>感受宁静 {{ name }}!</h1>
-  <img src='/static/ningjing.jpg'/>
-{% else %}
+<script>
+  
+</script>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    background-image: url('/static/gansouningjing.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 50% 50%;
+    color: #fff;
+  }
+  .blue {
+    background-image: url('/static/ico_b.png');
+  }
+  .yellow {
+    background-image: url('/static/ico_y.png');
+  }
+  .item {
+    background-repeat: no-repeat;
+    width: 56px;
+    height: 56px;
+    text-align: center;
+    line-height: 56px;
+    font-size: 28px;
+    margin: 0 10px;
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  h1{
+    margin: 0 10px;
+
+  }
+</style>
+<body>
+  <div class="content">
+  {% if name %}
+  <h1>感受宁静 </h1>
+    <div class="blue item">{{ name[0] }}</div>
+    <div class="blue item">{{ name[1] }}</div>
+    <div class="blue item">{{ name[2] }}</div>
+    <div class="blue item">{{ name[3] }}</div>
+    <div class="blue item">{{ name[4] }}</div>
+    <div class="yellow item">{{ name[5] }}</div>
+    <div class="yellow item">{{ name[6] }}</div>
+  <h1>!</h1>
+  <!-- <img src='/static/gansouningjing.jpeg'/> -->
+  {% else %}
   <h1>平常心!</h1>
-{% endif %}
+  {% endif %}
+  </div>
+</body>

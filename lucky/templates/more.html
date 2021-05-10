@@ -5,6 +5,7 @@
   function copyText(text) {
     var textarea = document.createElement("textarea");
     textarea.value = text;
+    document.body.appendChild(textarea);
     textarea.focus();
     textarea.select();
     try {

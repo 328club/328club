@@ -1,7 +1,24 @@
 <!doctype html>
 <title>感受宁静</title>
-<script>
   
+<script type="text/javascript">
+  function copyText(text) {
+    var textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.focus();
+    textarea.select();
+    try {
+      var flag = document.execCommand("copy");
+    } catch (eo) {
+      var flag = false;
+    }
+    if (flag) {
+      alert("幸运号码已复制");
+    } else {
+      alert("复制失败");
+    }
+    return flag;
+  }
 </script>
 <style>
   body, html {
@@ -37,7 +54,7 @@
 </style>
 <body>
   {% if name %}
-  <div class="content">感受宁静 {{name}} !</div>
+  <div class="content" onclick="copyText('{{name}}')">感受宁静 {{name}} !</div>
 
   <!-- <img src='/static/gansouningjing.jpeg'/> -->
   {% else %}

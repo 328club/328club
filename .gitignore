@@ -1,2 +1,17 @@
 .idea
 .DS_Store
+
+# python temporary file
+*.pyc
+
+# celery
+celerybeat-schedule
+
+
+# temporary file
+temp/
+temp_script/
+
+.git/
+.idea/
+

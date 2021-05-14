@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>tracking.js - face with camera</title>
+
+  <script src="/static/libs/tracking/tracking-min.js"></script>
+  <script src="/static/libs/tracking/data/face-min.js"></script>
+
+  <style>
+  </style>
+</head>
+<body>
+<div>
+  <div style="margin: 100px auto; width: 320px; position: relative;">
+    <video id="video" width="320" height="320" style="border-radius: 50%;object-fit: cover;" preload autoplay loop
+           muted></video>
+    <canvas id="canvas" width="320" height="320" style="position: absolute ;top: 0; left: 0;"></canvas>
+  </div>
+</div>
+
+<script>
+    window.onload = function () {
+        var video = document.getElementById('video');
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        var hasFace = false;
+
+        var tracker = new tracking.ObjectTracker('face');
+        tracker.setInitialScale(4);
+        tracker.setStepSize(2);
+        tracker.setEdgesDensity(0.1);
+        var trackingTask = tracking.track(video, tracker, {camera: true});
+        tracker.on('track', function (event) {
+            if (hasFace) {
+                return;
+            }
+
+            context.clearRect(canvas.width / 6, 0, canvas.width / 3 * 4, canvas.height);
+
+            if (event.data.length <= 0) {
+                return;
+            }
+            // 检测到人脸
+            hasFace = true;
+
+            // 画框
+            event.data.forEach(function (rect) {
+                context.strokeStyle = '#a64ceb';
+                context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+                context.font = '11px Helvetica';
+                context.fillStyle = "#fff";
+                context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+                context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+            });
+            trackingTask.stop();
+            video.pause();
+
+            // TODO 搜索人脸
+            alert("去搜索人脸");
+        });
+    };
+</script>
+
+</body>
+</html>

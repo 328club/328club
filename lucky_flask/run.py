@@ -144,7 +144,7 @@ def dantuo(name=None):
 
 @app.route('/login/')
 def login():
-    return render_template('camera.html')
+    return app.send_static_file('camera.html')
 
 
 # 传入Base64格式的图片
